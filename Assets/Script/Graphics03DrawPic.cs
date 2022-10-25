@@ -182,6 +182,22 @@ public class Graphics03DrawPic : MonoBehaviour
 
         GL.End();
         GL.PopMatrix();
+
+    }
+
+    public int triangleSize = 2;
+    //使用TRIANGLES进行绘制三角形
+    private void DrawTriangle()
+    {
+        GL.Begin(GL.TRIANGLES);
+        //顺时针
+        GL.Color(Color.red);
+        GL.Vertex3(-triangleSize, -triangleSize, 0);//左下
+        GL.Color(Color.green);
+        GL.Vertex3(0, triangleSize, 0);//上     
+        GL.Color(Color.blue);
+        GL.Vertex3(triangleSize, -triangleSize, 0);//右下
+        GL.End();
     }
 
     private void DrawDoubleFacePic()
